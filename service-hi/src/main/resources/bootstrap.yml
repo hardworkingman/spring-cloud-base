@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: service-hi
+  profiles:
+    active: dev
+  cloud:
+    config:
+      label: master
+      profile: ${spring.profiles.active}
+      discovery:
+        service-id: service-config
+        enabled: true
+      fail-fast: true
